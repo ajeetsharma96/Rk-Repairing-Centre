@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 
 /* General Styles */
 body {
@@ -10,10 +15,10 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: auto;
+    padding: 0 16px;
 }
 
 /* Header Styles */
@@ -44,6 +49,21 @@ header {
     z-index: 1;
 }
 
+@media (max-width: 768px) {
+    .owner-photo {
+        position: static;
+        margin: 10px auto;
+        display: block;
+    }
+
+    .owner-photo.left,
+    .owner-photo.right {
+        left: auto;
+        right: auto;
+    }
+}
+
+
 .owner-photo.left {
     left: 50px;
 }
@@ -69,7 +89,7 @@ header .container {
 }
 
 header h1 {
-    font-size: 2.2em;
+    font-size: clamp(1.8em, 5vw, 2.2em);
     font-weight: 700;
     margin: 0 0 10px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -122,6 +142,15 @@ nav ul li a:hover {
     text-decoration: none;
     transform: translateY(-1px);
 }
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+}
+
+
 
 /* Services Section */
 #services {
@@ -353,6 +382,17 @@ nav ul li a:hover {
     align-items: flex-start;
 }
 
+@media (max-width: 992px) {
+    .content-wrapper {
+        flex-direction: column;
+    }
+
+    .side-ad {
+        max-width: 100%;
+    }
+}
+
+
 .side-ad {
     flex: 1;
     max-width: 200px;
@@ -416,10 +456,9 @@ nav ul li a:hover {
     margin: 0;
 }
 
-/* Advertisement Section */
+/*                      Advertisement Section               */
 
 /* ========== FOOTER ADVERTISEMENT CONTACT (DARK & CLEAN) ========== */
-/* ===== Advertisement Contact (GREY THEME) ===== */
 #advertisement {
     background-color: linear-gradient(135deg, #343a40 0%, #495057 100%);
     padding: 30px 0;
@@ -638,6 +677,16 @@ footer p {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 768px) {
+    .btn {
+        width: 90%;
+        display: block;
+        margin: 10px auto;
+        text-align: center;
+    }
+}
+
+
 .btn:hover {
     background: linear-gradient(135deg, #2563eb, #1e40af);
     transform: translateY(-2px);
@@ -685,9 +734,11 @@ footer p {
     }
 
     .gallery-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-        gap: 15px;
-    }
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
 
     .contact-branches {
         flex-direction: column;
@@ -698,6 +749,15 @@ footer p {
         font-size: 2em;
     }
 }
+
+@media (max-width: 768px) {
+    .contact-branches {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+
 
 @media (max-width: 480px) {
     header {
@@ -1048,3 +1108,18 @@ footer p {
     }
 }
 
+@media (max-width: 480px) {
+    .sell-repair-grid,
+    .tools-grid,
+    .services-grid,
+    .consumables-grid,
+    .chemicals-grid,
+    .bulk-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+git config core.ignorecase false
+git add -A
+git commit -m "changed the contact to owner default message"
+git push origin main
