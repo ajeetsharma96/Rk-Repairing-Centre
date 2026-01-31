@@ -91,7 +91,7 @@ document.querySelectorAll('.btn').forEach(btn => {
             this.disabled = true;
 
             const ownerNumber = '9693135841';
-            const message = 'Hi, Rk Repairing Centre. I want to advertise my brand on your website.';
+            const message = 'Hi, Rk Repairing Centre. I want to chat with you';
 
             setTimeout(() => {
                 window.open(
