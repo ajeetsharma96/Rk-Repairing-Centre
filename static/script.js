@@ -80,28 +80,40 @@ document.querySelectorAll('img').forEach(img => {
 document.querySelectorAll('.btn').forEach(btn => {
     btn.onclick = function(event) {
         const text = this.textContent.trim();
-        if (text === 'Book Appointment') {
+
+        if (text === 'Contact Owner') {
             event.preventDefault();
-            // Send notification to owner's WhatsApp
-            const ownerNumber = '9693135841'; // Rajendra's number
+
+            // ✅ Change text when tapped
+            this.textContent = 'Connecting on WhatsApp...';
+
+            // Optional: disable button to prevent multiple clicks
+            this.disabled = true;
+
+            const ownerNumber = '9693135841';
+            const message = 'Hi, Rk Repairing Centre. I want to advertise my brand on your website.';
+
+            setTimeout(() => {
+                window.open(
+                    `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`,
+                    '_blank'
+                );
+
+                // Optional: reset text after opening
+                this.textContent = 'Contact Owner';
+                this.disabled = false;
+            }, 600);
+        }
+
+        else if (text === 'Book Appointment') {
+            event.preventDefault();
+            const ownerNumber = '9693135841';
             const message = 'Hi, Rk Repairing Centre. I want to chat with you';
             window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
-        } else if (text === 'Get Quote') {
-            event.preventDefault();
-            // Send notification for bulk quote
-            const ownerNumber = '9693135841';
-            const message = 'Hi Rk Repairing Centre, I want to buy blades in bulk amount';
-            window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
-        } else if (text === 'Contact for Bulk Orders') {
-            event.preventDefault();
-            // Send notification for bulk orders
-            const ownerNumber = '9693135841';
-            const message = 'Hi, Rk Repairing Centre, I am interested in bulk orders.';
-            window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
-        // Other buttons like Call Now, Send Photo, View on Map are already links
     };
 });
+
 
 
 // ===== New Arrivals Popup =====
