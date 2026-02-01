@@ -1118,8 +1118,3 @@ footer p {
         grid-template-columns: 1fr;
     }
 }
-
-git config core.ignorecase false
-git add -A
-git commit -m "changed the contact to owner default message"
-git push origin main
