@@ -3,6 +3,12 @@
 }
 
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
 
 /* General Styles */
 body {
@@ -978,15 +984,25 @@ footer p {
     overflow-x: auto;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.45);
     backdrop-filter: blur(8px);
-    -webkit-overflow-scrolling: touch;
 }
 
 /* Table base */
 .table-wrapper table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
 }
+/* mobile responsiveness */
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    .table-wrapper table {
+        min-width: 520px; /* only when really needed */
+    }
+}
+
 
 /* Header */
 .table-wrapper thead {
@@ -1149,28 +1165,36 @@ footer p {
     background: linear-gradient(135deg, #de7914, #f59e0b);
 } */
 
-/* ===== Mobile Table Responsiveness ===== */
+.table-wrapper td {
+    word-wrap: break-word;
+}
+
+.table-wrapper td > div,
+.table-wrapper td {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
 @media (max-width: 768px) {
-
-    .table-section {
-        margin: 20px auto;
-        padding: 20px 10px;
+    nav ul {
+        padding: 0;
+        width: 100%;
     }
 
-    .table-wrapper table {
-        min-width: 600px; /* allows smooth horizontal scroll */
+    nav ul li {
+        display: block;
+        margin: 6px 0;
+        width: 100%;
     }
 
-    .table-wrapper th,
-    .table-wrapper td {
-        padding: 12px 10px;
-        font-size: 13px;
+    nav ul li a {
+        display: block;
+        width: 100%;
     }
+}
 
-    .brand {
-        padding: 5px 12px;
-        font-size: 12px;
-        margin: 4px 4px 4px 0;
-        white-space: nowrap;
-    }
+
+img, table {
+    max-width: 100%;
 }
