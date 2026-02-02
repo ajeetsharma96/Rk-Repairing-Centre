@@ -92,7 +92,7 @@ document.querySelectorAll('.btn.contact-owner').forEach(btn => {
             // Optional: disable button to prevent multiple clicks
             this.disabled = true;
 
-            const ownerNumber = '9693135841';
+            const ownerNumber = '919693135841';
             const message = 'Hi, Rk Repairing Centre. I want to chat with you';
 
             setTimeout(() => {
