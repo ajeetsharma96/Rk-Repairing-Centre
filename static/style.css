@@ -148,6 +148,22 @@ nav ul li a:hover {
         display: block;
         margin: 8px 0;
     }
+
+    /* new changes for mobile responsiveness of services.html page */
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
 }
 
 
@@ -1037,7 +1053,7 @@ footer p {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
 }
 
-/* Responsive tweaks */
+/* Responsive tweaks
 @media (max-width: 768px) {
     .table-section h2 {
         font-size: 24px;
@@ -1047,7 +1063,28 @@ footer p {
     .table-wrapper td {
         padding: 14px 16px;
     }
+} */
+
+/* new change for services.html responsivenss in mobile phones */ 
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    .table-wrapper th,
+    .table-wrapper td {
+        font-size: 13px;
+        padding: 12px;
+        white-space: normal;
+    }
+
+    .brand {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
 }
+
 
 
 
@@ -1097,7 +1134,6 @@ footer p {
     background: transparent;
     opacity: 1;
 
-    /* 👇 KEY FIX */
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
 }
 
@@ -1119,3 +1155,13 @@ footer p {
     }
 }
 
+
+
+/*  new modification of services.html for responsiveness in phone */
+
+
+@media (max-width: 768px) {
+    .table-wrapper table {
+        min-width: unset;   /* 🔑 THIS FIXES OVERFLOW */
+    }
+}

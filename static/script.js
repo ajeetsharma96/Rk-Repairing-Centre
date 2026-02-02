@@ -79,42 +79,42 @@ document.querySelectorAll('img').forEach(img => {
 // Button functionalities
 
 
-// document.querySelectorAll('.btn').forEach(btn => {
-//     btn.onclick = function(event) {
-//         const text = this.textContent.trim();
+document.querySelectorAll('.btn.contact-owner').forEach(btn => {
+    btn.onclick = function(event) {
+        const text = this.textContent.trim();
 
-//         if (text === 'Contact Owner') {
-//             event.preventDefault();
+        if (text === 'Contact Owner') {
+            event.preventDefault();
 
-//             // ✅ Change text when tapped
-//             this.textContent = 'Connecting on WhatsApp...';
+            // ✅ Change text when tapped
+            this.textContent = 'Connecting on WhatsApp...';
 
-//             // Optional: disable button to prevent multiple clicks
-//             this.disabled = true;
+            // Optional: disable button to prevent multiple clicks
+            this.disabled = true;
 
-//             const ownerNumber = '9693135841';
-//             const message = 'Hi, Rk Repairing Centre. I want to chat with you';
+            const ownerNumber = '9693135841';
+            const message = 'Hi, Rk Repairing Centre. I want to chat with you';
 
-//             setTimeout(() => {
-//                 window.open(
-//                     `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`,
-//                     '_blank'
-//                 );
+            setTimeout(() => {
+                window.open(
+                    `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`,
+                    '_blank'
+                );
 
-//                 // Optional: reset text after opening
-//                 this.textContent = 'Contact Owner';
-//                 this.disabled = false;
-//             }, 600);
-//         }
+                // Optional: reset text after opening
+                this.textContent = 'Contact Owner';
+                this.disabled = false;
+            }, 600);
+        }
 
-//         else if (text === 'Book Appointment') {
-//             event.preventDefault();
-//             const ownerNumber = '9693135841';
-//             const message = 'Hi, Rk Repairing Centre. I want to chat with you';
-//             window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
-//         }
-//     };
-// });
+        else if (text === 'Book Appointment') {
+            event.preventDefault();
+            const ownerNumber = '9693135841';
+            const message = 'Hi, Rk Repairing Centre. I want to chat with you';
+            window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+    };
+});
 
 
 
