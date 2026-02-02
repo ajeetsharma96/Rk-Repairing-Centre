@@ -737,7 +737,7 @@ footer p {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
     gap: 10px;
-}
+    }
 
 
     .contact-branches {
@@ -1119,57 +1119,3 @@ footer p {
     }
 }
 
-/* ===== SERVICE TABLE PILL BUTTONS ===== */
-
-.service-pill {
-    display: inline-block;
-    margin: 6px 6px 6px 0;
-    padding: 6px 16px;
-
-    font-size: 13px;
-    font-weight: 500;
-    color: #ffffff;
-
-    border-radius: 999px;
-    background: linear-gradient(135deg, #2563eb, #3b82f6);
-
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
-    transition: all 0.25s ease;
-    white-space: nowrap;
-}
-
-.service-pill:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45);
-}
-
-/*
-.service-pill.warning {
-    background: linear-gradient(135deg, #de7914, #f59e0b);
-} */
-
-/* ===== Mobile Table Responsiveness ===== */
-@media (max-width: 768px) {
-
-    .table-section {
-        margin: 20px auto;
-        padding: 20px 10px;
-    }
-
-    .table-wrapper table {
-        min-width: 600px; /* allows smooth horizontal scroll */
-    }
-
-    .table-wrapper th,
-    .table-wrapper td {
-        padding: 12px 10px;
-        font-size: 13px;
-    }
-
-    .brand {
-        padding: 5px 12px;
-        font-size: 12px;
-        margin: 4px 4px 4px 0;
-        white-space: nowrap;
-    }
-}
