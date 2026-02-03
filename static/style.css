@@ -1126,8 +1126,11 @@ footer p {
 .site-logo {
     width: 120px;
     height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
+
+    /* 🔑 IMPORTANT CHANGE */
+    border-radius: 12px;   /* NOT circle */
+
+    object-fit: contain;   /* prevents cropping */
     display: block;
     margin: 0 auto 14px auto;
 
@@ -1136,6 +1139,7 @@ footer p {
 
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.45));
 }
+
 
 
 @media (max-width: 768px) {

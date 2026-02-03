@@ -1,6 +1,9 @@
+//  LIMIT IMAGE SIZE (PREVENT FULL SCREEN)
+modalImg.style.maxWidth = '85vw';    
+modalImg.style.maxHeight = '80vh';   
+modalImg.style.objectFit = 'contain';
+modalImg.style.borderRadius = '10px';
 
-// Modal for image zoom
-const modal = document.createElement('div');
 modal.id = 'image-modal';
 modal.innerHTML = `
     <span id="close-modal">&times;</span>
@@ -18,7 +21,7 @@ modal.style.top = '0';
 modal.style.width = '100%';
 modal.style.height = '100%';
 modal.style.overflow = 'auto';
-modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
+modal.style.backgroundColor = 'rgba(0,0,0,0.75)';
 modal.style.justifyContent = 'center';
 modal.style.alignItems = 'center';
 document.body.appendChild(modal);
@@ -29,7 +32,7 @@ const zoomInBtn = document.getElementById('zoom-in');
 const zoomOutBtn = document.getElementById('zoom-out');
 
 let currentZoom = 1;
-const maxZoom = 2.0;
+const maxZoom = 1.5;
 
 closeModal.onclick = function() {
     modal.style.display = 'none';
