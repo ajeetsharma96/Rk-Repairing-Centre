@@ -1,9 +1,6 @@
-//  LIMIT IMAGE SIZE (PREVENT FULL SCREEN)
-modalImg.style.maxWidth = '85vw';    
-modalImg.style.maxHeight = '80vh';   
-modalImg.style.objectFit = 'contain';
-modalImg.style.borderRadius = '10px';
 
+// Modal for image zoom
+const modal = document.createElement('div');
 modal.id = 'image-modal';
 modal.innerHTML = `
     <span id="close-modal">&times;</span>
@@ -21,7 +18,7 @@ modal.style.top = '0';
 modal.style.width = '100%';
 modal.style.height = '100%';
 modal.style.overflow = 'auto';
-modal.style.backgroundColor = 'rgba(0,0,0,0.75)';
+modal.style.backgroundColor = 'rgba(0,0,0,0.9)';
 modal.style.justifyContent = 'center';
 modal.style.alignItems = 'center';
 document.body.appendChild(modal);
@@ -32,7 +29,7 @@ const zoomInBtn = document.getElementById('zoom-in');
 const zoomOutBtn = document.getElementById('zoom-out');
 
 let currentZoom = 1;
-const maxZoom = 1.5;
+const maxZoom = 2.0;
 
 closeModal.onclick = function() {
     modal.style.display = 'none';
@@ -80,45 +77,31 @@ document.querySelectorAll('img').forEach(img => {
 });
 
 // Button functionalities
-
-
-document.querySelectorAll('.btn.contact-owner').forEach(btn => {
+document.querySelectorAll('.btn').forEach(btn => {
     btn.onclick = function(event) {
         const text = this.textContent.trim();
-
-        if (text === 'Contact Owner') {
+        if (text === 'Book Appointment') {
             event.preventDefault();
-
-            // ✅ Change text when tapped
-            this.textContent = 'Connecting on WhatsApp...';
-
-            // Optional: disable button to prevent multiple clicks
-            this.disabled = true;
-
-            const ownerNumber = '919693135841';
-            const message = 'Hi, Rk Repairing Centre. I want to chat with you';
-
-            setTimeout(() => {
-                window.open(
-                    `https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`,
-                    '_blank'
-                );
-
-                // Optional: reset text after opening
-                this.textContent = 'Contact Owner';
-                this.disabled = false;
-            }, 600);
-        }
-
-        else if (text === 'Book Appointment') {
-            event.preventDefault();
-            const ownerNumber = '9693135841';
+            // Send notification to owner's WhatsApp
+            const ownerNumber = '9693135841'; // Rajendra's number
             const message = 'Hi, Rk Repairing Centre. I want to chat with you';
             window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        } else if (text === 'Get Quote') {
+            event.preventDefault();
+            // Send notification for bulk quote
+            const ownerNumber = '9693135841';
+            const message = 'Hi Rk Repairing Centre, I want to buy blades in bulk amount';
+            window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        } else if (text === 'Contact for Bulk Orders') {
+            event.preventDefault();
+            // Send notification for bulk orders
+            const ownerNumber = '9693135841';
+            const message = 'Hi, Rk Repairing Centre, I am interested in bulk orders.';
+            window.open(`https://wa.me/${ownerNumber}?text=${encodeURIComponent(message)}`, '_blank');
         }
+        // Other buttons like Call Now, Send Photo, View on Map are already links
     };
 });
-
 
 
 // ===== New Arrivals Popup =====
